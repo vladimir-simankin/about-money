@@ -11,41 +11,45 @@
 
 	<groupId>ru.simankin</groupId>
 	<artifactId>about-money</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>about-money</name>
 	<description>Application about money</description>
 
 	<properties>
 		<java.version>14</java.version>
-		<logger.version>1.0.2</logger.version>
+		<logger.version>1.0.3</logger.version>
 	</properties>
 
 	<dependencies>
+		<!--Spring-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!--Logging-->
+		<dependency>
+			<groupId>ru.simankin</groupId>
+			<artifactId>logger</artifactId>
+			<version>${logger.version}</version>
+		</dependency>
+		<!--Other-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>ru.simankin</groupId>
-			<artifactId>logger</artifactId>
-			<version>${logger.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 	</dependencies>
 
@@ -57,16 +61,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>about-money-mvn-repo</id>
-			<url>https://github.com/vladimir-simankin/about-money/mvn-repo/</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</repository>
-	</repositories>
 
 </project>
