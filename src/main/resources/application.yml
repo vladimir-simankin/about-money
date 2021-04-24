@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: about-money
+  datasource:
+    url: jdbc:postgresql://localhost:5432/about_money
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        default_schema: about_money
+server:
+  port: 8085
